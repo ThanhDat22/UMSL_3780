@@ -3,13 +3,26 @@
 #include <stdbool.h>
 
 bool is_password_okay(void) {
-    char password[12];
-    
-    gets(password);
-    if (!strcmp(password, "goodpass")) { 
-        return(true); 
-    } else { 
-        return(false); 
+    char password[100];
+
+    // Replace gets() with fgets() to prevent buffer overflow
+    if(fgets(password, sizeof(password), stdin) == NULL) {
+        puts("Invalid input!");
+        return false;
+    }
+
+    // Remove the newline character from the password
+    password[strcspn(password, "\n")] = 0;
+
+    // Using strncpy() for copying the password to prevent buffer overflow
+    char secure_password[12];
+    strncpy(secure_password, password, sizeof(secure_password) - 1);
+    secure_password[sizeof(secure_password) - 1] = '\0'; // Null-terminate the string
+
+    if(!strcmp(secure_password, "goodpass")) {
+        return true;
+    } else {
+        return false;
     }
 }
 
