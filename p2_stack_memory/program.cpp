@@ -3,9 +3,9 @@
 using namespace std;
 
 // Function declaration
-void func_1(int);
-void func_2(int);
-void func_3(int);
+int func_1(int);
+int func_2(int);
+int func_3(int);
 
 // Main function
 int main() {
