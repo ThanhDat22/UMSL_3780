@@ -32,7 +32,7 @@ void exam_memory() {
         cout << "Dynamic array value: " << dynamic_array[i] << endl;
     }
 
-    
+    cin.get();
 
     // Free memory
     delete[] dynamic_array;
