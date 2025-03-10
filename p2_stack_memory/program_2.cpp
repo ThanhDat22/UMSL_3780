@@ -27,7 +27,7 @@ void exam_memory() {
     cout << "Static array address: " << a << endl;
     cout << "Dynamic array address: " << dynamic_array << endl;
 
-    for(size_t i = 0; i < v.size(); i++) {
+    for(size_t i = 0; i < size(); i++) {
         cout << "Static array value: " << a[i] << endl;
         cout << "Dynamic array value: " << dynamic_array[i] << endl;
     }
