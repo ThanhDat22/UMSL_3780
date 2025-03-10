@@ -1,6 +1,4 @@
 #include <iostream>
-#include <vector>
-
 
 using namespace std;
 
@@ -8,7 +6,10 @@ using namespace std;
 void exam_memory();
 
 // Main function
-
+int main() {
+    exam_memory();
+    return 0;
+}
 
 // Function definition
 void exam_memory() {
@@ -17,22 +18,20 @@ void exam_memory() {
     size_t size = sizeof(a) / sizeof(a[0]);
 
     // Dynamic allocation of memory
-    vector<int> v;
+    int * dynamic_array = new int[size];
     for(size_t i = 0; i < size; i++) {
-        v.push_back(a[i] * 10);
+        dynamic_array[i] = a[i] * 10;
     }
 
     // Print
     cout << "Static array address: " << a << endl;
-    cout << "Dynamic array address: " << v.data() << endl;
+    cout << "Dynamic array address: " << dynamic_array << endl;
 
     for(size_t i = 0; i < v.size(); i++) {
         cout << "Static array value: " << a[i] << endl;
-        cout << "Dynamic array value: " << v.at(i) << endl;
+        cout << "Dynamic array value: " << dynamic_array[i] << endl;
     }
-}
 
-int main() {
-    exam_memory();
-    return 0;
+    // Free memory
+    delete[] dynamic_array;
 }
