@@ -17,8 +17,13 @@ int main() {
     get_input(a, b);
 
     // Calculate
+    cout << "Addition: ";
     add(a, b);
+
+    cout << "Multiplication: ";
     multiply(a, b);
+
+    cout << "Division: ";
     divide(a, b);
 
     return 0;
